@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b18">
+<title>Priyanshu Verma | Portfolio</title>
+<style>
+:root{--bg:#070b18;--panel:rgba(16,25,49,.72);--blue:#55c7ff;--violet:#9b7bff;--text:#f3f6ff;--muted:#aab5d0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 12% 10%,#142d62 0,transparent 35%),radial-gradient(ellipse at 88% 35%,#27154f 0,transparent 35%),linear-gradient(145deg,#070b18,#0a1023 55%,#070b18)}
+#stars{position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(7,11,24,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(130,170,255,.13)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:850;font-size:1.08rem;letter-spacing:.3px}.logo span{color:var(--blue)}
+nav{display:flex;gap:25px;color:#c5cee5;font-size:.94rem}
+nav a:hover{color:var(--blue)}
+.pill{border:1px solid rgba(85,199,255,.5);padding:10px 15px;border-radius:999px;color:var(--blue);font-size:.88rem;box-shadow:0 0 22px #55c7ff12}
+.hero{min-height:690px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:45px;padding:75px 0 90px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #55c7ff42;background:#55c7ff0c;color:#a6e5ff;padding:9px 14px;border-radius:999px;font-size:.76rem;letter-spacing:1.3px;font-weight:750}
+.dot{width:7px;height:7px;border-radius:50%;background:#62f4c5;box-shadow:0 0 12px #62f4c5}
+h1{font-size:clamp(2.8rem,6vw,5.4rem);line-height:1.02;letter-spacing:-2.5px;margin:25px 0 22px}
+.gradient{background:linear-gradient(95deg,#fff 5%,#69d5ff 45%,#a991ff 85%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.08rem;line-height:1.9;color:var(--muted);max-width:590px}
+.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 19px;border-radius:13px;font-weight:750;transition:.25s;border:1px solid #ffffff24}
+.btn.primary{background:linear-gradient(110deg,#218cff,#765bff);box-shadow:0 10px 35px #4d74ff42;color:white;border:0}
+.btn.secondary{background:#ffffff08;color:#e7edff}
+.btn:hover{transform:translateY(-4px);filter:brightness(1.12)}
+.quick{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.tag{padding:9px 12px;border-radius:999px;background:#ffffff08;border:1px solid #ffffff13;color:#c8d2e9;font-size:.86rem}
+.visual{position:relative;display:grid;place-items:center;min-height:450px}
+.orbit{position:absolute;width:360px;height:360px;border:1px solid #55c7ff5c;border-radius:50%;box-shadow:0 0 45px #318aff14,inset 0 0 45px #318aff10;animation:spin 24s linear infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #9b7bff70;border-radius:50%;inset:24px;transform:rotateX(65deg) rotateY(18deg)}
+.orbit:after{inset:-22px;transform:rotateX(70deg) rotateY(-25deg);border-color:#55c7ff32}
+@keyframes spin{to{transform:rotate(360deg)}}
+.photo-shell{position:relative;width:260px;height:310px;padding:7px;border-radius:34px;background:linear-gradient(145deg,#77e0ff,#6554ff,#ffffff);box-shadow:0 0 70px #398bff44;transform:rotate(3deg);animation:float 5s ease-in-out infinite}
+.photo-shell img{width:100%;height:100%;object-fit:cover;object-position:center 30%;border-radius:28px;display:block}
+@keyframes float{0%,100%{transform:translateY(0) rotate(3deg)}50%{transform:translateY(-13px) rotate(-1deg)}}
+.float-card{position:absolute;background:rgba(12,21,43,.84);border:1px solid #8acfff42;backdrop-filter:blur(15px);padding:13px 16px;border-radius:16px;box-shadow:0 15px 40px #0005;animation:float 5s ease-in-out infinite}
+.float-card strong{display:block;font-size:.94rem}.float-card small{color:var(--muted)}.fc1{top:50px;right:0}.fc2{bottom:56px;left:0;animation-delay:-2.5s}
+section{padding:75px 0;scroll-margin-top:75px}
+.section-head{text-align:center;margin-bottom:35px}.kicker{color:var(--blue);font-size:.78rem;letter-spacing:2px;font-weight:800}.section-head h2{font-size:clamp(2rem,4vw,3rem);margin-top:10px;letter-spacing:-1px}.section-head p{color:var(--muted);margin:12px auto 0;max-width:620px;line-height:1.8}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{position:relative;overflow:hidden;background:linear-gradient(145deg,#ffffff0d,#ffffff04);border:1px solid #9bbdff20;border-radius:22px;padding:25px;transition:.3s}
+.card:before{content:"";position:absolute;top:0;left:-100%;width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent);transition:.6s}
+.card:hover{transform:translateY(-7px);border-color:#55c7ff6b;box-shadow:0 18px 45px #0003}.card:hover:before{left:120%}
+.icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(140deg,#55c7ff20,#9b7bff24);border:1px solid #8acfff32;font-size:1.4rem;margin-bottom:20px}
+.card h3{font-size:1.15rem;margin-bottom:10px}.card p{color:var(--muted);line-height:1.75;font-size:.94rem}
+.skill-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.skill-list span{padding:8px 11px;border:1px solid #8eafff2c;background:#ffffff08;border-radius:10px;color:#d9e5ff;font-size:.86rem}
+.timeline{max-width:760px;margin:auto;display:grid;gap:16px}.timeline .card{display:flex;gap:18px;align-items:flex-start}.timeline .icon{flex-shrink:0;margin:0}
+.contact-box{text-align:center;padding:42px 25px;border:1px solid #55c7ff35;border-radius:28px;background:radial-gradient(ellipse at top,#23437a55,transparent 65%),#ffffff06}
+.contact-box h2{font-size:clamp(2rem,4vw,3rem);margin:12px 0}.contact-box p{color:var(--muted);line-height:1.8;margin:0 auto 24px;max-width:580px}
+footer{border-top:1px solid #ffffff12;padding:25px 0;color:#7f8ba8;text-align:center;font-size:.85rem}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:760px){nav{gap:13px;font-size:.82rem}.nav{height:auto;min-height:68px;flex-wrap:wrap;padding:13px 0}.pill{display:none}.hero{grid-template-columns:1fr;text-align:center;padding:58px 0 45px;gap:20px}.lead{margin:auto}.actions,.quick{justify-content:center}.visual{min-height:390px;order:-1}.orbit{width:300px;height:300px}.photo-shell{width:220px;height:265px}.fc1{right:2%;top:35px}.fc2{left:1%;bottom:35px}.grid{grid-template-columns:1fr}.section-head{text-align:center}section{padding:55px 0}h1{letter-spacing:-1.5px}.timeline .card{text-align:left}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<header><div class="wrap nav"><a class="logo" href="#home">PRIYANSHU<span>.</span>VERMA</a><nav><a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#activities">Activities</a></nav><a class="pill" href="#contact">LET'S CONNECT ↗</a></div></header>
+<main>
+<section class="wrap hero" id="home">
+ <div class="hero-copy reveal">
+  <div class="eyebrow"><span class="dot"></span> STUDENT · FRESHER · LIFELONG LEARNER</div>
+  <h1>Building my future,<br><span class="gradient">one skill at a time.</span></h1>
+  <p class="lead">Hi, I'm <b>Priyanshu Verma</b> — a B.Sc. Biology student who loves learning new skills, gaining practical experience, and making a positive contribution wherever I work.</p>
+  <div class="actions"><a class="btn primary" href="#contact">✦ Let's Connect</a><a class="btn secondary" href="#about">Explore My Journey ↓</a></div>
+  <div class="quick"><span class="tag">📍 Uttar Pradesh, India</span><span class="tag">🎓 B.Sc. Biology</span><span class="tag">🌱 Always Learning</span></div>
+ </div>
+ <div class="visual reveal"><div class="orbit"></div><div class="photo-shell"><img src="profile.jpg" alt="Priyanshu Verma profile photo"></div><div class="float-card fc1"><strong>🚀 Growth mindset</strong><small>Learn · Practice · Improve</small></div><div class="float-card fc2"><strong>✧ Curious by nature</strong><small>Ready for new opportunities</small></div></div>
+</section>
+<section id="about"><div class="wrap"><div class="section-head reveal"><div class="kicker">A LITTLE ABOUT ME</div><h2>Curious mind. Clear goals.</h2><p>I believe every new skill is a step toward a better future. I am working on my knowledge, communication, and practical abilities, one day at a time.</p></div><div class="grid"><article class="card reveal"><div class="icon">🎯</div><h3>My Goal</h3><p>Keep learning, build useful skills, and find opportunities where I can grow and contribute.</p></article><article class="card reveal"><div class="icon">🧠</div><h3>My Mindset</h3><p>Stay curious, work consistently, learn from mistakes, and improve through practice.</p></article><article class="card reveal"><div class="icon">🤝</div><h3>My Values</h3><p>Respect people, stay honest, help others, and bring a positive attitude to every task.</p></article></div></div></section>
+<section id="education"><div class="wrap"><div class="section-head reveal"><div class="kicker">MY LEARNING JOURNEY</div><h2>Education</h2><p>Building a strong foundation through study and continuous learning.</p></div><div class="timeline"><article class="card reveal"><div class="icon">🎓</div><div><h3>B.Sc. Biology</h3><p>Undergraduate student with an interest in biology and learning more about the world around us.</p></div></article><article class="card reveal"><div class="icon">📘</div><div><h3>Continuous Learning</h3><p>Developing communication, digital, and professional skills alongside my studies.</p></div></article></div></div></section>
+<section id="skills"><div class="wrap"><div class="section-head reveal"><div class="kicker">WHAT I'M BUILDING</div><h2>Skills & strengths</h2><p>Skills grow with practice. Here are the areas I am focusing on.</p></div><div class="grid"><article class="card reveal"><div class="icon">💬</div><h3>Communication</h3><p>Practising clear speaking, listening, and expressing ideas with confidence.</p><div class="skill-list"><span>English Practice</span><span>Speaking</span><span>Teamwork</span></div></article><article class="card reveal"><div class="icon">💻</div><h3>Digital Skills</h3><p>Building comfort with digital tools and learning how websites work.</p><div class="skill-list"><span>Computer Basics</span><span>Web Learning</span><span>Typing Practice</span></div></article><article class="card reveal"><div class="icon">🌿</div><h3>Personal Strengths</h3><p>Bringing patience, curiosity, responsibility, and a willingness to learn.</p><div class="skill-list"><span>Hard Work</span><span>Adaptability</span><span>Problem Solving</span></div></article></div></div></section>
+<section id="activities"><div class="wrap"><div class="section-head reveal"><div class="kicker">BEYOND THE CLASSROOM</div><h2>Activities & interests</h2><p>I enjoy learning through real practice, exploring new ideas, and improving a little every day.</p></div><div class="grid"><article class="card reveal"><div class="icon">🗣️</div><h3>Speaking Practice</h3><p>Practising communication and building confidence through conversations and activities.</p></article><article class="card reveal"><div class="icon">📚</div><h3>Learning & Reading</h3><p>Exploring useful knowledge and discovering new ideas that support my goals.</p></article><article class="card reveal"><div class="icon">🌟</div><h3>Personal Growth</h3><p>Setting goals, staying consistent, and using feedback to keep improving.</p></article></div></div></section>
+<section id="contact"><div class="wrap"><div class="contact-box reveal"><div class="kicker">HAVE AN OPPORTUNITY?</div><h2>Let's build something good.</h2><p>I'm open to learning, connecting, and exploring opportunities that help me grow. Feel free to reach out.</p><a class="btn primary" href="mailto:your-email@example.com">✉ Contact Me</a><p style="font-size:.8rem;margin-top:15px">Remember to replace this sample email with your own email address.</p></div></div></section>
+</main>
+<footer><div class="wrap">© 2026 Priyanshu Verma · Designed with curiosity and ambition ✦</div></footer>
+<script>
+const canvas=document.getElementById('stars'),ctx=canvas.getContext('2d');let w,h,stars=[];
+function resize(){w=canvas.width=innerWidth;h=canvas.height=innerHeight;stars=Array.from({length:Math.min(100,Math.floor(w/10))},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.6+.3,v:Math.random()*.35+.08,a:Math.random()*.65+.2}))}
+function draw(){ctx.clearRect(0,0,w,h);for(const s of stars){s.y-=s.v;if(s.y<0){s.y=h;s.x=Math.random()*w}ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(143,204,255,${s.a})`;ctx.fill()}requestAnimationFrame(draw)}
+addEventListener('resize',resize);resize();draw();
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body></html>
