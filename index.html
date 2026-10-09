@@ -1,16 +1,4 @@
-from PIL import Image
-import os, zipfile
-
-base = "/mnt/data/priyanshu_portfolio"
-os.makedirs(base, exist_ok=True)
-
-# Crop the portrait area from the supplied resume image.
-resume_img = Image.open("/mnt/data/1000159480.png")
-portrait = resume_img.crop((30, 20, 265, 290))
-portrait_path = os.path.join(base, "profile.jpg")
-portrait.save(portrait_path, quality=92)
-
-html = r'''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
