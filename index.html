@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Priyanshu Verma | Portfolio</title>
+
+<meta name="description"
+content="Welcome to Priyanshu Verma's personal portfolio.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #050816;
+    --card: #101a30;
+    --blue: #00bfff;
+    --light: #dcecff;
+    --muted: #9aabc6;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: white;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+/* ENTRY SCREEN */
+
+#entry {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background:
+        radial-gradient(circle at center,
+        #102c58 0%, #050816 65%);
+    text-align: center;
+    padding: 25px;
+    transition: opacity .7s, visibility .7s;
+}
+
+#entry.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.entry-logo {
+    font-size: clamp(32px, 8vw, 62px);
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: white;
+    text-shadow: 0 0 30px var(--blue);
+    animation: float 2s ease-in-out infinite;
+}
+
+.entry-subtitle {
+    color: var(--muted);
+    margin: 12px 0 28px;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.enter-btn {
+    border: 1px solid var(--blue);
+    padding: 14px 35px;
+    border-radius: 50px;
+    background: var(--blue);
+    color: #00101c;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 25px #00bfff66;
+    transition: .3s;
+}
+
+.enter-btn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 40px #00bfffaa;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* NAVIGATION */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #050816ed;
+    border-bottom: 1px solid #1b3352;
+    backdrop-filter: blur(15px);
+}
+
+nav {
+    max-width: 1150px;
+    margin: auto;
+    padding: 17px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.logo {
+    font-size: 19px;
+    font-weight: 900;
+    color: var(--blue);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: var(--light);
+    font-size: 13px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--blue);
+}
+
+/* GENERAL */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 90px 22px;
+}
+
+.section-label {
+    color: var(--blue);
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-size: clamp(30px, 5vw, 45px);
+    line-height: 1.2;
+    margin: 12px 0 18px;
+}
+
+.section-desc {
+    color: var(--muted);
+    max-width: 650px;
+    margin-bottom: 35px;
+}
+
+.blue {
+    color: var(--blue);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: #008cff18;
+    filter: blur(60px);
+    top: 10%;
+    right: -100px;
+}
+
+.hero-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.4fr .8fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.badge {
+    display: inline-block;
+    border: 1px solid #00bfff55;
+    border-radius: 50px;
+    padding: 7px 15px;
+    color: var(--blue);
+    background: #00bfff0d;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 560px;
+    margin-bottom: 25px;
+}
+
+.buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 9px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--blue);
+    color: #00101c;
+    box-shadow: 0 0 18px #00bfff30;
+}
+
+.btn-secondary {
+    border: 1px solid #345170;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 24px #00bfff40;
+}
+
+.profile-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-ring {
+    width: min(290px, 70vw);
+    height: min(290px, 70vw);
+    border-radius: 50%;
+    border: 2px solid var(--blue);
+    padding: 9px;
+    box-shadow: 0 0 35px #00bfff30;
+    animation: ringGlow 3s infinite alternate;
+}
+
+.profile-ring img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background: var(--card);
+}
+
+@keyframes ringGlow {
+    from { box-shadow: 0 0 15px #00bfff25; }
+    to { box-shadow: 0 0 40px #00bfff75; }
+}
+
+.floating-card {
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    background: #101a30;
+    border: 1px solid #25456a;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 12px;
+    box-shadow: 0 10px 35px #0008;
+}
+
+.floating-card strong {
+    display: block;
+    color: var(--blue);
+}
+
+/* INFO CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 26px;
+    background: linear-gradient(145deg, #101a30, #091121);
+    border: 1px solid #203553;
+    border-radius: 18px;
+    transition: .35s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: var(--blue);
+    box-shadow: 0 12px 35px #00bfff12;
+}
+
+.card-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 17px;
+}
+
+.tags span {
+    background: #00bfff12;
+    border: 1px solid #00bfff28;
+    color: #a9eaff;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 11px;
+}
+
+/* EDUCATION */
+
+.timeline {
+    border-left: 2px solid #164b70;
+    margin-left: 8px;
+    padding-left: 27px;
+}
+
+.timeline-item {
+    position: relative;
+    background: var(--card);
+    border: 1px solid #203553;
+    padding: 23px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: 27px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--blue);
+    box-shadow: 0 0 15px var(--blue);
+}
+
+.timeline-item h3 {
+    margin-bottom: 8px;
+}
+
+.timeline-item p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* SKILLS */
+
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.skill {
+    background: var(--card);
+    border: 1px solid #203553;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.skill-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.skill-head span {
+    color: var(--blue);
+    font-size: 12px;
+}
+
+.skill-bar {
+    height: 7px;
+    background: #24324a;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #0077ff, #00e5ff);
+    border-radius: 20px;
+    transition: width 1.5s ease;
+}
+
+/* CONTACT */
+
+.contact-box {
+    text-align: center;
+    padding: 50px 25px;
+    border-radius: 25px;
+    border: 1px solid #1c4971;
+    background:
+        radial-gradient(ellipse at top, #103365, #0b1426 65%);
+}
+
+.contact-box .section-desc {
+    margin: 0 auto 25px;
+}
+
+.contact-box .buttons {
+    justify-content: center;
+}
+
+footer {
+    border-top: 1px solid #1b2b43;
+    text-align: center;
+    padding: 25px 15px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+footer strong {
+    color: var(--blue);
+}
+
+/* REVEAL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+    nav {
+        flex-direction: column;
+        padding: 13px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 13px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .profile-wrap {
+        margin: 10px auto 20px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-list {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 65px 20px;
+    }
+
+    .floating-card {
+        right: -5px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ENTRY ANIMATION -->
+
+<div id="entry">
+    <div class="entry-logo">PRIYANSHU<span class="blue">.</span></div>
+
+    <p class="entry-subtitle">
+        WELCOME TO MY DIGITAL WORLD
+    </p>
+
+    <button class="enter-btn" id="enterButton">
+        ENTER PORTFOLIO &nbsp; →
+    </button>
+</div>
+
+<!-- NAVIGATION -->
+
+<header>
+    <nav>
+        <a href="#home" class="logo">PRIYANSHU.VERMA</a>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#activities">Activities</a>
+            <a href="#contact">Contact ↗</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+<!-- HOME -->
+
+<section class="container hero" id="home">
+    <div class="hero-grid">
+
+        <div class="reveal">
+            <span class="badge">
+                ✦ STUDENT · FRESHER · LIFELONG LEARNER
+            </span>
+
+            <h1>
+                Building my future,<br>
+                <span class="blue">one skill at a time.</span>
+            </h1>
+
+            <p>
+                Hi, I'm Priyanshu Verma — a B.Sc. Biology student
+                who loves learning new skills, gaining practical
+                experience, and making a positive contribution
+                wherever I work.
+            </p>
+
+            <div class="buttons">
+                <a href="#contact" class="btn btn-primary">
+                    ✦ Let's Connect
+                </a>
+
+                <a href="#about" class="btn btn-secondary">
+                    Explore My Journey ↓
+                </a>
+            </div>
+
+            <div class="tags">
+                <span>📍 Uttar Pradesh, India</span>
+                <span>🎓 B.Sc. Biology</span>
+                <span>🌱 Always Learning</span>
+            </div>
+        </div>
+
+        <div class="profile-wrap reveal">
+            <div class="profile-ring">
+                <img
+                    src="profile.jpg"
+                    alt="Priyanshu Verma"
+                    onerror="this.style.display='none'; this.parentElement.style.background='#101a30';"
+                >
+            </div>
+
+            <div class="floating-card">
+                <strong>🚀 Growth Mindset</strong>
+                Learn · Practice · Improve
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="container" id="about">
+    <div class="reveal">
+        <div class="section-label">A LITTLE ABOUT ME</div>
+
+        <h2 class="section-title">
+            Curious mind. <span class="blue">Clear goals.</span>
+        </h2>
+
+        <p class="section-desc">
+            I believe every new skill is a step toward a better
+            future. I am working on my knowledge, communication,
+            and practical abilities, one day at a time.
+        </p>
+    </div>
+
+    <div class="cards">
+
+        <article class="card reveal">
+            <div class="card-icon">🎯</div>
+            <h3>My Goal</h3>
+            <p>
+                Keep learning, build useful skills, and find
+                opportunities where I can grow and contribute.
+            </p>
+        </article>
+
+        <article class="card reveal">
+            <div class="card-icon">🧠</div>
+            <h3>My Mindset</h3>
+            <p>
+                Stay curious, work consistently, learn from
+                mistakes, and improve through practice.
+            </p>
+        </article>
+
+        <article class="card reveal">
+            <div class="card-icon">🤝</div>
+            <h3>My Values</h3>
+            <p>
+                Respect people, stay honest, help others, and
+                bring a positive attitude to every task.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<!-- EDUCATION -->
+
+<section class="container" id="education">
+    <div class="reveal">
+        <div class="section-label">MY LEARNING JOURNEY</div>
+
+        <h2 class="section-title">
+            Education & <span class="blue">Growth</span>
+        </h2>
+
+        <p class="section-desc">
+            Building a strong foundation through study and
+            continuous learning.
+        </p>
+    </div>
+
+    <div class="timeline">
+
+        <article class="timeline-item reveal">
+            <h3>🎓 B.Sc. Biology</h3>
+            <p>
+                Undergraduate student with an interest in biology
+                and learning more about the world around us.
+            </p>
+        </article>
+
+        <article class="timeline-item reveal">
+            <h3>📘 Continuous Learning</h3>
+            <p>
+                Developing communication, digital, and professional
+                skills alongside my studies.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<!-- SKILLS -->
+
+<section class="container" id="skills">
+    <div class="reveal">
+        <div class="section-label">WHAT I'M BUILDING</div>
+
+        <h2 class="section-title">
+            Skills & <span class="blue">Strengths</span>
+        </h2>
+
+        <p class="section-desc">
+            Skills grow with practice. These are the areas
+            I am focusing on.
+        </p>
+    </div>
+
+    <div class="skill-list">
+
+        <div class="skill reveal">
+            <div class="skill-head">
+                <strong>💬 Communication</strong>
+                <span>Learning</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-fill" data-width="75%"></div>
+            </div>
+
+            <div class="tags">
+                <span>English Practice</span>
+                <span>Speaking</span>
+                <span>Teamwork</span>
+            </div>
+        </div>
+
+        <div class="skill reveal">
+            <div class="skill-head">
+                <strong>💻 Digital Skills</strong>
+                <span>Learning</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-fill" data-width="65%"></div>
+            </div>
+
+            <div class="tags">
+                <span>Computer Basics</span>
+                <span>Web Learning</span>
+                <span>Typing</span>
+            </div>
+        </div>
+
+        <div class="skill reveal">
+            <div class="skill-head">
+                <strong>🌱 Personal Growth</strong>
+                <span>Practising</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-fill" data-width="80%"></div>
+            </div>
+
+            <div class="tags">
+                <span>Hard Work</span>
+                <span>Patience</span>
+                <span>Adaptability</span>
+            </div>
+        </div>
+
+        <div class="skill reveal">
+            <div class="skill-head">
+                <strong>🧩 Problem Solving</strong>
+                <span>Developing</span>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-fill" data-width="60%"></div>
+            </div>
+
+            <div class="tags">
+                <span>Critical Thinking</span>
+                <span>Practice</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ACTIVITIES -->
+
+<section class="container" id="activities">
+    <div class="reveal">
+        <div class="section-label">BEYOND THE CLASSROOM</div>
+
+        <h2 class="section-title">
+            Activities & <span class="blue">Interests</span>
+        </h2>
+
+        <p class="section-desc">
+            I enjoy learning through real practice, exploring
+            new ideas, and improving a little every day.
+        </p>
+    </div>
+
+    <div class="cards">
+
+        <article class="card reveal">
+            <div class="card-icon">🗣️</div>
+            <h3>Speaking Practice</h3>
+            <p>
+                Practising communication and building confidence
+                through conversations and activities.
+            </p>
+        </article>
+
+        <article class="card reveal">
+            <div class="card-icon">📚</div>
+            <h3>Learning & Reading</h3>
+            <p>
+                Exploring useful knowledge and discovering new
+                ideas that support my goals.
+            </p>
+        </article>
+
+        <article class="card reveal">
+            <div class="card-icon">🌟</div>
+            <h3>Personal Growth</h3>
+            <p>
+                Setting goals, staying consistent, and using
+                feedback to keep improving.
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="container" id="contact">
+    <div class="contact-box reveal">
+
+        <div class="section-label">LET'S CONNECT</div>
+
+        <h2 class="section-title">
+            Let's Talk! <span class="blue">🚀</span>
+        </h2>
+
+        <p class="section-desc">
+            Have an opportunity or want to connect with me?
+            Feel free to reach out.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="https://wa.me/917579897081"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                💬 Chat on WhatsApp
+            </a>
+
+            <a
+                href="mailto:priyanshuverma6525@gmail.com"
+                class="btn btn-secondary"
+            >
+                ✉️ Send Email
+            </a>
+
+        </div>
+
+        <p style="margin-top:25px;color:#9aabc6;font-size:13px;">
+            📍 Uttar Pradesh, India
+        </p>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    © 2026 <strong>Priyanshu Verma</strong>
+    · Designed with curiosity and ambition ✦
+</footer>
+
+<script>
+/* ENTRY BUTTON */
+
+const entry = document.getElementById("entry");
+const enterButton = document.getElementById("enterButton");
+
+enterButton.addEventListener("click", function () {
+    entry.classList.add("hide");
+    sessionStorage.setItem("portfolioEntered", "yes");
+});
+
+/* SHOW ENTRY ON FIRST VISIT IN THIS TAB */
+
+if (sessionStorage.getItem("portfolioEntered") === "yes") {
+    entry.classList.add("hide");
+}
+
+/* REVEAL CARDS ON SCROLL */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (item) {
+            if (item.isIntersecting) {
+                item.target.classList.add("visible");
+                observer.unobserve(item.target);
+            }
+        });
+    }, {
+        threshold: 0.12
+    });
+
+    revealElements.forEach(function (element) {
+        observer.observe(element);
+    });
+} else {
+    revealElements.forEach(function (element) {
+        element.classList.add("visible");
+    });
+}
+
+/* ANIMATE SKILL BARS */
+
+const skillSection = 
