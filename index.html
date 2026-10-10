@@ -24,7 +24,19 @@ content="Welcome to Priyanshu Verma's personal portfolio.">
     --light: #dcecff;
     --muted: #9aabc6;
 }
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("enterButton");
+    const entry = document.getElementById("entry");
 
+    if (button && entry) {
+        button.addEventListener("click", function () {
+            entry.classList.add("hide");
+            sessionStorage.setItem("portfolioEntered", "yes");
+        });
+    }
+});
+</script>
 body {
     font-family: Arial, sans-serif;
     background: var(--bg);
