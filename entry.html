@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome | Priyanshu Verma</title><style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #050505;
+  color: #f9d77b;
+  font-family: Georgia, serif;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#intro {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  background: radial-gradient(circle, #30220b, #100c05 45%, #000);
+  overflow: hidden;
+  transition: opacity 1s ease;
+}
+
+#intro::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    transparent 0deg 15deg,
+    rgba(255, 199, 72, 0.07) 16deg 17deg,
+    transparent 18deg 30deg
+  );
+  animation: rotate 35s linear infinite;
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, #ffe6a0 1px, transparent 2px),
+    radial-gradient(circle, #b8872c 1px, transparent 2px);
+  background-size: 70px 90px, 110px 130px;
+  animation: float 7s linear infinite;
+}
+
+.portal {
+  width: min(86vw, 390px);
+  aspect-ratio: 1;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.ring {
+  position: absolute;
+  border: 2px solid #c99a36;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #d8a83c, inset 0 0 20px #8a641f;
+}
+
+.ring.one {
+  inset: 0;
+  border-style: dashed;
+  animation: rotate 15s linear infinite;
+}
+
+.ring.two {
+  inset: 7%;
+  border-color: #fff0ad;
+  box-shadow: 0 0 35px #d8a83c;
+  animation: rotate 10s linear infinite reverse;
+}
+
+.ring.three {
+  inset: 14%;
+  border-style: dotted;
+  animation: rotate 20s linear infinite;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 15px;
+  animation: appear 1.5s ease both;
+}
+
+.small {
+  font: 11px Arial, sans-serif;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: clamp(29px, 8vw, 45px);
+  line-height: 1.2;
+  letter-spacing: 3px;
+  text-shadow: 0 0 25px #c89530;
+}
+
+h1 span {
+  color: #fff0b7;
+}
+
+.tagline {
+  margin-top: 18px;
+  font: 10px Arial, sans-serif;
+  letter-spacing: 3px;
+}
+
+button {
+  margin-top: 30px;
+  border: 1px solid #ffe8a0;
+  border-radius: 40px;
+  padding: 15px 23px;
+  background: linear-gradient(110deg, #a87518, #fff0b0, #bc8624);
+  color: #1a1103;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 0 25px #b9892e77;
+  transition: transform .3s, box-shadow .3s;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px #f9d77b;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 25px;
+  z-index: 2;
+  font: 10px Arial, sans-serif;
+  letter-spacing: 4px;
+  color: #b9944c;
+}
+
+#intro.exit {
+  opacity: 0;
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  to { background-position: 0 -180px, 50px -220px; }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(.7);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+  }
+}
+</style></head><body>
+<section id="intro">
+  <div class="particles"></div>  <div class="portal">
+    <div class="ring one"></div>
+    <div class="ring two"></div>
+    <div class="ring three"></div><div class="content">
+  <p class="small">WELCOME TO MY WORLD</p>
+  <h1>PRIYANSHU<br><span>VERMA</span></h1>
+  <p class="tagline">DREAM • LEARN • ACHIEVE</p>
+
+  <button onclick="enterPortfolio()">
+    ENTER MY WORLD &nbsp; →
+  </button>
+</div>
+
+  </div>  <p class="bottom">MY JOURNEY STARTS HERE</p>
+</section><script>
+function enterPortfolio() {
+  const intro = document.getElementById("intro");
+  intro.classList.add("exit");
+
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 1000);
+}
+</script></body>
+</html>
